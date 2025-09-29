@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2qocetrr7gxp"]
+
+[ext_resource type="Script" uid="uid://dobit3d40kbea" path="res://scripts/lootingscript.gd" id="1_mijg2"]
+[ext_resource type="Resource" uid="uid://frvjaa4m72c8" path="res://dialogues/equipment.dialogue" id="2_3vgr0"]
+[ext_resource type="Texture2D" uid="uid://dqg2ncyabwxu" path="res://pixelorama sprites/corpse.png" id="2_5yjmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vgr0"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_mijg2")
+scene_name = "bag3_scene"
+resource = ExtResource("2_3vgr0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vgr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.239999, 0.239999)
+texture = ExtResource("2_5yjmb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 34.0
+offset_bottom = 18.0
+scale = Vector2(0.279998, 0.450535)
+tooltip_text = "something someone before you left"
+mouse_filter = 0
