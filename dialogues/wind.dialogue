@@ -1,0 +1,8 @@
+~ wind
+As the trees close in on you there is a stong wind picking up.
+The air is much colder now.
+The cabin seems so close.
+- Continue ahead (everything will cost more warmth)
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END

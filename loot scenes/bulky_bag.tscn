@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwmidqd3i058h"]
+
+[ext_resource type="Script" uid="uid://b1r8hligxcvee" path="res://big_bag.gd" id="1_5smsi"]
+[ext_resource type="Texture2D" uid="uid://b81mbvu1usunh" path="res://new sprites/final sprites/big_bag.png" id="2_mk5gb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn76x"]
+size = Vector2(16, 16)
+
+[node name="bulky_bag" type="StaticBody2D" groups=["loot"]]
+script = ExtResource("1_5smsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gn76x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.239999, 0.239999)
+texture = ExtResource("2_mk5gb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 34.0
+offset_bottom = 18.0
+scale = Vector2(0.279998, 0.450535)
+tooltip_text = "something someone before you left"
+mouse_filter = 0
+metadata/_edit_use_anchors_ = true

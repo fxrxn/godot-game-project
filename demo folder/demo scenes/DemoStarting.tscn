@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd7qd7f3vgglu"]
+
+[ext_resource type="Script" uid="uid://b6nfsoi4gqoc3" path="res://demo folder/demo scripts/buttondeadlol.gd" id="1_0t6ar"]
+[ext_resource type="Texture2D" uid="uid://d0ul4krsqbf38" path="res://new sprites/ui/download (4).png" id="2_xrrrd"]
+[ext_resource type="Texture2D" uid="uid://dmunl10mbm6uy" path="res://new sprites/ui/title pic.png" id="3_xrrrd"]
+[ext_resource type="Texture2D" uid="uid://001hvn7melyh" path="res://icon.svg" id="4_3r53p"]
+[ext_resource type="Script" uid="uid://bcbyvp1yebbgx" path="res://demo folder/demo scripts/end button.gd" id="5_0t6ar"]
+[ext_resource type="Texture2D" uid="uid://5yjck4sjibex" path="res://new sprites/ui/download (2).png" id="5_3r53p"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 643.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0017331
+anchor_top = 0.00466563
+anchor_right = 0.0017331
+anchor_bottom = 0.00466563
+offset_left = 294.0
+offset_top = 109.0
+offset_right = 829.0
+offset_bottom = 267.0
+theme_override_font_sizes/font_size = 50
+text = "To Build a Campfire
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 504.0
+offset_right = 440.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 27
+script = ExtResource("1_0t6ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(160, 72)
+scale = Vector2(3.25, 4)
+texture = ExtResource("2_xrrrd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0017331
+anchor_top = 0.00466563
+anchor_right = 0.0017331
+anchor_bottom = 0.00466563
+offset_left = 368.0
+offset_top = 136.0
+offset_right = 903.0
+offset_bottom = 294.0
+theme_override_font_sizes/font_size = 29
+text = "Death is just a beginning.
+And you made a promise."
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(576, 320)
+scale = Vector2(0.666667, 0.555556)
+texture = ExtResource("3_xrrrd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 1, 1, 1)
+position = Vector2(532, 456.4)
+scale = Vector2(25.655, 2.36375)
+texture = ExtResource("4_3r53p")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 504.0
+offset_right = 984.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 27
+script = ExtResource("5_0t6ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button3"]
+position = Vector2(160, 72)
+scale = Vector2(3.25, 4)
+texture = ExtResource("5_3r53p")

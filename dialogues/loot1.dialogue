@@ -1,0 +1,66 @@
+~ bag1_scene
+
+You see a small bag on the ground. There is a thin sheet of snow covering some parts of it. There is also a skull... Must have belonged to a traveller that is no more.
+The bag is still here though. 
+
+- Search it (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	do! global.loot_collected += 1
+	=> search
+
+- Leave the bag alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ search
+You are searching...
+% 
+	- The bag seems empty...
+		=> lost
+% 
+	- You found something!
+		=> found
+
+~ found
+%
+	You found some matches within the bag. Only two of them seem to be still dry
+	- Take the matches
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%
+	You found some matches within the bag. Only one of them seems to be still dry
+	- Take the match
+		do global.current_matches += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%
+	You found some matches within the bag. Only three of them seem to be still dry
+	- Take the matches
+		do global.current_matches += 3
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+~ lost 
+You look around frantically but it is completely empty. You drop the empty bag back on the ground with a sense of dread.
+- ...
+	do! get_node("/root/Main/Player/Warmth").decrease_sanity(5)
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+	
+	
+	
+
+~ bag1_sceneskeleton
+You move closer to the bag.
+Something feels wrong.
+do loot.unfreeze()
+do Globald.in_dialogue = false
+=> END

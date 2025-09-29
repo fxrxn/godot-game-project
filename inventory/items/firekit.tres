@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://fti20by57v06"]
+
+[ext_resource type="Script" uid="uid://bsa4lgith4lhb" path="res://inventory/inventory_item.gd" id="1_j5vwt"]
+[ext_resource type="Texture2D" uid="uid://bhnlksa1mqvcs" path="res://pixelorama sprites/untitled.png" id="2_4avcp"]
+
+[resource]
+script = ExtResource("1_j5vwt")
+name = "firekit"
+texture = ExtResource("2_4avcp")
+metadata/_custom_type_script = "uid://bsa4lgith4lhb"

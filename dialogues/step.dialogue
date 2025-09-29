@@ -1,0 +1,37 @@
+~ step_danger
+do loot.unfreeze() 
+do global.fallen = true
+do get_node("/root/Main/Player").play_animation("trip", get_node("/root/Main/Player").current_direction)
+do get_node("/root/Main/Player").stop_footstep()
+do loot.freeze()
+Out of nowhere, your feet give way.
+You find yourself buried within the snow.
+- Get back up
+	do cabin.fade_to_black_then_back()
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	do global.fallen = false
+	do get_node("/root/Main/Player").moving = false
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(3)
+	do get_node("/root/Main/Player").play_animation("Idle", get_node("/root/Main/Player").current_direction)
+	=> END
+	
+~ step_death
+You fall.
+do loot.unfreeze() 
+do get_node("/root/Main/Player").play_animation("trip", get_node("/root/Main/Player").current_direction)
+do loot.freeze()
+You expect the snow to stop your fall but it doesn't.
+It consumes you. 
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.die()
+=> END
+
+~ skelly_death
+You feel a buzzing sound in your head.
+Everything goes dark.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.skelly_die()
+=> END

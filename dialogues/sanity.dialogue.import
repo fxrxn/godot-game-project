@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bg2fq6xo16avc"
+path="res://.godot/imported/sanity.dialogue-ef438f0cd1cfa7bb8d2b336599e1b438.tres"
+
+[deps]
+
+source_file="res://dialogues/sanity.dialogue"
+dest_files=["res://.godot/imported/sanity.dialogue-ef438f0cd1cfa7bb8d2b336599e1b438.tres"]
+
+[params]
+
+defaults=true

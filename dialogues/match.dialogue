@@ -1,0 +1,9 @@
+~ match
+You strike the match. A faint flame dances against the wind, giving you a few seconds of life.
+- Hold on to the warmth.
+	do! get_node("/root/Main/Player/MatchManager").light_match()
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+	
+	

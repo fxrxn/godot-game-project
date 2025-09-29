@@ -1,0 +1,319 @@
+~ bag5_scene
+You spot a bulky survival bag tangled in tree roots. It looks like someone packed it in a hurry.
+
+- Search it (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	do! global.loot_collected += 1
+	=> search
+
+- Leave the bag alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ search
+You are searching...
+% 
+	- You found something!
+		=> found_1
+
+~ found_1
+%17
+	You found some dry matches tucked in a side pocket.
+	- Take the matches and leave
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+	- Keep searching (lose more warmth)
+		do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+		=> search_2_m
+%17
+	You found a piece of wood
+	- Take the wood and leave
+		do global.collected_wood += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+	- Keep searching (lose more warmth)
+		do! warmth.decrease_warmth(global.loot_cost)
+		=> search_2_w
+%17
+	You found a packaged snack.
+	- Take the food and leave
+		do loot.collect(ItemDatabase.food)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+	- Keep searching (lose more warmth)
+		do! warmth.decrease_warmth(global.loot_cost)
+		=> search_2_f
+%17
+	You found a compact fire kit.
+	- Take the fire kit and leave
+		do loot.collect(ItemDatabase.firekit)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+	- Keep searching (lose more warmth)
+		do! warmth.decrease_warmth(global.loot_cost)
+		=> search_2_fk
+%16
+	You found an amulet.
+	- Take the amulet and leave
+		do loot.collect(ItemDatabase.amulet)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+	- Keep searching (lose more warmth)
+		do! warmth.decrease_warmth(global.loot_cost)
+		=> search_2_a
+%16
+	You found a scarf.
+	- Take the clothing and leave
+		do loot.collect(ItemDatabase.clothing)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+	- Keep searching (lose more warmth)
+		do! warmth.decrease_warmth(global.loot_cost)
+		=> search_2_c
+
+~ search_2_m
+You dig deeper into the bag.
+%20
+	You found a packaged snack.
+	- Take the food
+		do loot.collect(ItemDatabase.food)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a fire kit.
+	- Take the fire kit
+		do loot.collect(ItemDatabase.firekit)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found an amulet.
+	- Take the amulet
+		do loot.collect(ItemDatabase.amulet)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a scarf.
+	- Take the clothing
+		do loot.collect(ItemDatabase.clothing)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	The rest of the bag is empty.
+	- ...
+		do global.lose_sanity
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ search_2_w
+You dig deeper into the bag.
+%20
+	You found some dry matches.
+	- Take the matches
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a packaged snack.
+	- Take the food
+		do loot.collect(ItemDatabase.food)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a fire kit.
+	- Take the fire kit
+		do loot.collect(ItemDatabase.firekit)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found an amulet.
+	- Take the amulet
+		do loot.collect(ItemDatabase.amulet)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	The rest of the bag is empty.
+	- ...
+		do global.lose_sanity
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ search_2_f
+You dig deeper into the bag.
+%20
+	You found some dry matches.
+	- Take the matches
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a piece of wood.
+	- Take the wood
+		do global.collected_wood += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a fire kit.
+	- Take the fire kit
+		do loot.collect(ItemDatabase.firekit)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a scarf.
+	- Take the clothing
+		do loot.collect(ItemDatabase.clothing)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	The rest of the bag is empty.
+	- ...
+		do global.lose_sanity
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ search_2_fk
+You dig deeper into the bag.
+%20
+	You found some dry matches.
+	- Take the matches
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a piece of wood.
+	- Take the wood
+		do global.collected_wood += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a packaged snack.
+	- Take the food
+		do loot.collect(ItemDatabase.food)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a scarf.
+	- Take the clothing
+		do loot.collect(ItemDatabase.clothing)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	The rest of the bag is empty.
+	- ...
+		do global.lose_sanity
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ search_2_a
+You dig deeper into the bag.
+%20
+	You found some dry matches.
+	- Take the matches
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a piece of wood.
+	- Take the wood
+		do global.collected_wood += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a packaged snack.
+	- Take the food
+		do loot.collect(ItemDatabase.food)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a fire kit.
+	- Take the fire kit
+		do loot.collect(ItemDatabase.firekit)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	The rest of the bag is empty.
+	- ...
+		do global.lose_sanity
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ search_2_c
+You dig deeper into the bag.
+%20
+	You found some dry matches.
+	- Take the matches
+		do global.current_matches += 2
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a piece of wood.
+	- Take the wood
+		do global.collected_wood += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a packaged snack.
+	- Take the food
+		do loot.collect(ItemDatabase.food)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	You found a fire kit.
+	- Take the fire kit
+		do loot.collect(ItemDatabase.firekit)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%20
+	The rest of the bag is empty.
+	- ...
+		do global.lose_sanity
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ lost 
+You dig through the bag, but it’s already been picked clean. A cold wind rattles your bones.
+- ...
+	do global.lose_sanity
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END

@@ -1,0 +1,378 @@
+[gd_scene load_steps=13 format=3 uid="uid://7lqmuvq7dh64"]
+
+[ext_resource type="Script" uid="uid://c55nohminnmbk" path="res://demo folder/demo scripts/survival_guide.gd" id="1_seyeu"]
+[ext_resource type="Texture2D" uid="uid://b3tj5i5u07d7x" path="res://new sprites/ui/Next Square Button.png" id="2_0iumv"]
+[ext_resource type="Texture2D" uid="uid://drw7gxdwc2nck" path="res://new sprites/ui/oldpage.png" id="2_2mt40"]
+[ext_resource type="Texture2D" uid="uid://b456sktt160eo" path="res://new sprites/final sprites/fire.png" id="3_gli3p"]
+[ext_resource type="Texture2D" uid="uid://b8mbrkkbtumq5" path="res://new sprites/ui/Next Square Button (1).png" id="3_wt6u3"]
+[ext_resource type="Texture2D" uid="uid://5yjck4sjibex" path="res://new sprites/ui/download (2).png" id="3_y6cca"]
+[ext_resource type="Texture2D" uid="uid://bic11tjs1jb2b" path="res://new sprites/final sprites/spiky_boots(5).png" id="4_3eg1m"]
+[ext_resource type="Texture2D" uid="uid://dgadalrek5nmj" path="res://new sprites/final sprites/matchbox.png" id="5_jkfka"]
+[ext_resource type="Texture2D" uid="uid://dmrkxwptwkboe" path="res://new sprites/final sprites/wood.png" id="6_4o0x0"]
+[ext_resource type="Texture2D" uid="uid://hrokdgikvurv" path="res://new sprites/final sprites/singlecampfire.png" id="7_3eg1m"]
+[ext_resource type="Texture2D" uid="uid://bq4dlljvt2orl" path="res://new sprites/final sprites/warm_boots.png" id="8_gli3p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0plqb"]
+texture = ExtResource("2_2mt40")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_seyeu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0plqb")
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="BasicInformation" type="VBoxContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/BasicInformation"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "This Guide Contains Basic Information to Help You Survive the Harsh Cold!"
+
+[node name="Basic Information" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation"]
+layout_mode = 2
+
+[node name="TextureRect" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information"]
+layout_mode = 2
+text = "         "
+
+[node name="Page 1" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1"]
+layout_mode = 2
+
+[node name="Warmth" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer/Warmth"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_gli3p")
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer/Warmth"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "
+ Warmth: This is what keeps you alive. 
+You want your warmth as high as possible always.
+
+"
+autowrap_mode = 3
+
+[node name="Movement" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer/Movement"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_3eg1m")
+
+[node name="Label" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer/Movement"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "
+ Movement: Use WASD to move. 
+You lose warmth with each step you take 
+and the player moves tile by tile.
+"
+autowrap_mode = 3
+
+[node name="Matches" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer/Matches"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_jkfka")
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 1/VBoxContainer/Matches"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+text = "
+ Matches: Press \"E\" to light a match and receive a 
+small amount of warmth.  You start with 20 matches. 
+"
+autowrap_mode = 3
+
+[node name="Page 2" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer"]
+layout_mode = 2
+text = "
+
+"
+
+[node name="Wood" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer/Wood"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_4o0x0")
+
+[node name="Label4" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer/Wood"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+text = " Wood: Use your mouse and left click to collect wood. You must be next to a wood tile to collect it.
+"
+autowrap_mode = 3
+
+[node name="Campfire" type="HBoxContainer" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer/Campfire"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_3eg1m")
+
+[node name="Label3" type="Label" parent="Panel/TabContainer/BasicInformation/Basic Information/Page 2/VBoxContainer/Campfire"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+text = "
+ Campfire: Use \"F\" to light a campfire. 
+ Lighting a campfire requires 2 wood and 1 match. 
+"
+autowrap_mode = 3
+
+[node name="FurtherInformation" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label6" type="Label" parent="Panel/TabContainer/FurtherInformation"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "This Guide Contains Further Information to Help You Survive the Harsh Cold!"
+
+[node name="Basic Information" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation"]
+layout_mode = 2
+
+[node name="TextureRect" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information"]
+layout_mode = 2
+text = "         "
+
+[node name="Page 1" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Warmth" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer/Warmth"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_gli3p")
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer/Warmth"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "
+ Warmth: The game does not run on real time, meaning you won't lose warmth by time. 
+Only when taking certain actions.
+"
+autowrap_mode = 3
+
+[node name="Movement" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer/Movement"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_gli3p")
+
+[node name="Label" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer/Movement"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+text = " Movement: Consider your each move before starting it.
+ Taking one wrong step could you cost you more than just time.
+"
+autowrap_mode = 3
+
+[node name="Matches" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer/Matches"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_jkfka")
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 1/VBoxContainer/Matches"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+text = "
+ Matches: You must wait for your match to run out 
+before lighting a new one.
+"
+autowrap_mode = 3
+
+[node name="Page 2" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer"]
+layout_mode = 2
+text = "  
+
+"
+
+[node name="Wood" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer/Wood"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_4o0x0")
+
+[node name="Label4" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer/Wood"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+text = "
+ Wood: Picking up wood also costs warmth."
+autowrap_mode = 3
+
+[node name="Campfire" type="HBoxContainer" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer/Campfire"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_3eg1m")
+
+[node name="Label3" type="Label" parent="Panel/TabContainer/FurtherInformation/Basic Information/Page 2/VBoxContainer/Campfire"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+text = "
+ Campfire: You won't be able to light a campfire if the tile in front of you is occuppied. 
+
+ A campfire gives you a lot more warmth 
+than just a match.
+
+"
+autowrap_mode = 3
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.765
+anchor_right = 0.569
+anchor_bottom = 0.864
+offset_left = -8.38416
+offset_top = -31.72
+offset_right = -79.4882
+offset_bottom = -55.872
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.16085, 2.75484)
+icon = ExtResource("3_y6cca")
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.854
+anchor_top = 0.704
+anchor_right = 0.965
+anchor_bottom = 0.896
+offset_left = 0.191956
+offset_top = -0.192078
+offset_right = 84.3199
+offset_bottom = 83.392
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.600001)
+mouse_filter = 1
+text = "
+"
+icon = ExtResource("2_0iumv")
+
+[node name="Previous" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.704
+anchor_right = 0.139
+anchor_bottom = 0.896
+offset_left = -0.32
+offset_top = -0.192047
+offset_right = 91.872
+offset_bottom = 83.392
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+mouse_filter = 1
+text = "
+"
+icon = ExtResource("3_wt6u3")
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]

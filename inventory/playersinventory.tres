@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=9 format=3 uid="uid://uv2iux6idh35"]
+
+[ext_resource type="Script" uid="uid://jm0b4ukblorw" path="res://inventoryslut.gd" id="2_2yi1w"]
+[ext_resource type="Script" uid="uid://co2if1ue5qhrh" path="res://inventory/inventory.gd" id="3_p4buj"]
+
+[sub_resource type="Resource" id="Resource_d2l4n"]
+script = ExtResource("2_2yi1w")
+amount = 0
+metadata/_custom_type_script = "uid://jm0b4ukblorw"
+
+[sub_resource type="Resource" id="Resource_p4buj"]
+script = ExtResource("2_2yi1w")
+amount = 0
+metadata/_custom_type_script = "uid://jm0b4ukblorw"
+
+[sub_resource type="Resource" id="Resource_3nyc4"]
+script = ExtResource("2_2yi1w")
+amount = 0
+metadata/_custom_type_script = "uid://jm0b4ukblorw"
+
+[sub_resource type="Resource" id="Resource_llecp"]
+script = ExtResource("2_2yi1w")
+amount = 0
+metadata/_custom_type_script = "uid://jm0b4ukblorw"
+
+[sub_resource type="Resource" id="Resource_3ifmw"]
+script = ExtResource("2_2yi1w")
+amount = 0
+metadata/_custom_type_script = "uid://jm0b4ukblorw"
+
+[sub_resource type="Resource" id="Resource_2yi1w"]
+script = ExtResource("2_2yi1w")
+amount = 0
+metadata/_custom_type_script = "uid://jm0b4ukblorw"
+
+[resource]
+script = ExtResource("3_p4buj")
+sluts = Array[ExtResource("2_2yi1w")]([SubResource("Resource_d2l4n"), SubResource("Resource_p4buj"), SubResource("Resource_3nyc4"), SubResource("Resource_llecp"), SubResource("Resource_3ifmw"), SubResource("Resource_2yi1w")])
+metadata/_custom_type_script = "uid://co2if1ue5qhrh"

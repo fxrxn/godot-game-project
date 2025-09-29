@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://hjkkfy0n0h7b"]
+
+[ext_resource type="Script" uid="uid://dvfgfsmrw7qqj" path="res://tarots/tarot scripts/tarotsunlockingscript.gd" id="1_8b2yk"]
+[ext_resource type="Texture2D" uid="uid://s3uavxaawqcb" path="res://tarots/tarot arts/3.png" id="2_fp0yg"]
+[ext_resource type="Texture2D" uid="uid://bgo12ghnta5xs" path="res://tarots/tarot arts/highlight2.png" id="3_b7vl5"]
+[ext_resource type="Texture2D" uid="uid://brfwg4mmnni2i" path="res://tarots/tarot arts/empty.png" id="4_xhpt0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prysa"]
+size = Vector2(168.201, 263.987)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2.96, 2.44)
+script = ExtResource("1_8b2yk")
+card_name = "Priestess"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+modulate = Color(0.512092, 0.27006, 0.183836, 1)
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-0.168922, -2.73595e-06)
+scale = Vector2(0.283203, 0.242188)
+shape = SubResource("RectangleShape2D_prysa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1.43051e-06, -4.76837e-07)
+scale = Vector2(0.999437, 0.998975)
+texture = ExtResource("2_fp0yg")
+
+[node name="Highlight" type="Sprite2D" parent="Area2D"]
+z_index = -1
+position = Vector2(-2.29729, 2.62866)
+scale = Vector2(0.805181, 0.6969)
+texture = ExtResource("3_b7vl5")
+
+[node name="locked" type="Sprite2D" parent="Area2D"]
+z_index = 1
+texture = ExtResource("4_xhpt0")

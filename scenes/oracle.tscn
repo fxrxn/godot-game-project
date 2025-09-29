@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhra4ah6amxdk"]
+
+[ext_resource type="Script" uid="uid://dl080iudihfbh" path="res://scripts/oracle.gd" id="1_376al"]
+
+[node name="oracle" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 643.0
+script = ExtResource("1_376al")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 72.0004
+offset_top = 32.0001
+offset_right = 1087.0
+offset_bottom = 190.0
+theme_override_font_sizes/font_size = 50
+metadata/_edit_use_anchors_ = true

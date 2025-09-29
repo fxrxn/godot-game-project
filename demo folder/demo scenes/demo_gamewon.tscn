@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://b25xnnued80vr"]
+
+[ext_resource type="Texture2D" uid="uid://dmunl10mbm6uy" path="res://new sprites/ui/title pic.png" id="1_ivipf"]
+[ext_resource type="Script" uid="uid://46isbwjybotg" path="res://demo folder/demo scripts/panel.gd" id="1_pqbqc"]
+[ext_resource type="Script" uid="uid://bcbyvp1yebbgx" path="res://demo folder/demo scripts/end button.gd" id="2_84c5v"]
+[ext_resource type="Texture2D" uid="uid://5yjck4sjibex" path="res://new sprites/ui/download (2).png" id="4_pp41v"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+z_index = -4
+position = Vector2(576, 320)
+scale = Vector2(0.666667, 0.555556)
+texture = ExtResource("1_ivipf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 643.0
+script = ExtResource("1_pqbqc")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0017331
+anchor_top = 0.00466563
+anchor_right = 0.0017331
+anchor_bottom = 0.00466563
+offset_left = 38.0
+offset_top = 20.0
+offset_right = 573.0
+offset_bottom = 178.0
+theme_override_font_sizes/font_size = 50
+text = "To Build a Campfire
+"
+
+[node name="StepsLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 327.0
+offset_right = 96.0
+offset_bottom = 350.0
+
+[node name="CampfireLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 350.0
+offset_right = 96.0
+offset_bottom = 373.0
+
+[node name="LootLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 373.0
+offset_right = 96.0
+offset_bottom = 396.0
+
+[node name="DeathLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 396.0
+offset_right = 96.0
+offset_bottom = 419.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0017331
+anchor_top = 0.00466563
+anchor_right = 0.0017331
+anchor_bottom = 0.00466563
+offset_left = 40.0
+offset_top = 99.0
+offset_right = 729.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 19
+text = "I can't believe it! You did it! Against all odds! What happens next? Did you really reach your goal?
+Is the cabin truly safe? This is a demo after all. You will have to wait and find out!
+But please feel free to take a screenshot of this screen and then fill out the 
+google form/email me for feedback on what you thought of the game.
+
+I would love to hear from YOU.
+Here are some stats:"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 350.0
+offset_right = 1118.0
+offset_bottom = 442.0
+script = ExtResource("2_84c5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(75, 45)
+scale = Vector2(1.44792, 2.53125)
+texture = ExtResource("4_pp41v")
+
+[node name="credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0017331
+anchor_top = 0.00466563
+anchor_right = 0.0017331
+anchor_bottom = 0.00466563
+offset_left = 918.0
+offset_top = 154.0
+offset_right = 1607.0
+offset_bottom = 361.0
+theme_override_font_sizes/font_size = 19
+text = "Credits:"

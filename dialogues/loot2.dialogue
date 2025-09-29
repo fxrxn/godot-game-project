@@ -1,0 +1,52 @@
+~ bag2_scene
+
+You see a satchel on the ground. There is a thin sheet of snow covering some parts of it.
+
+
+- Search it (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	do! global.loot_collected += 1
+	=> search
+
+- Leave the satchel alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ search
+You are searching...
+% 
+	- The satchel seems empty...
+		=> lost
+%
+	- You found something!
+		=> found
+
+~ found
+%
+	You find a snack bar within the bag. You can feel your brain itching to consume it.
+	- Eat the snack bar
+		do! get_node("/root/Main/Player/Warmth").increase_sanity(10)
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+%
+	You find a fire kit within the satchel. It is bunch of small kindlings wrapped together. 
+	It would only require a single match to light up completely. You can easily make a campfire with it.
+	- Take the fire kit
+		do global.firekits_unlocked = true
+		do global.firekit += 1
+		do loot.unfreeze() 
+		do Globald.in_dialogue = false
+		=> END
+
+~ lost 
+You look around frantically but it is completely empty. You drop the empty satchel back on the ground with a sense of dread.
+- ...
+	do! get_node("/root/Main/Player/Warmth").decrease_sanity(5)
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END

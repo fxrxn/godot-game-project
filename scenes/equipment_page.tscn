@@ -1,0 +1,237 @@
+[gd_scene load_steps=14 format=3 uid="uid://cps2hq0ephlhm"]
+
+[ext_resource type="Script" uid="uid://bfw8f6ulvu1n2" path="res://scripts/equipment_page.gd" id="1_7tg8n"]
+[ext_resource type="Texture2D" uid="uid://cmyylv0uaj23t" path="res://new sprites/final sprites/sun_idol.png" id="2_h8kcg"]
+[ext_resource type="Texture2D" uid="uid://dtjwy5q65h31f" path="res://download (4).png" id="2_xo2er"]
+[ext_resource type="Texture2D" uid="uid://4ech8q14l61l" path="res://new sprites/final sprites/moon_idol.png" id="3_7tg8n"]
+[ext_resource type="ButtonGroup" uid="uid://detfkknusw1oo" path="res://scenes/idol.tres" id="3_iar4d"]
+[ext_resource type="Texture2D" uid="uid://cxr4hmu5euv62" path="res://New Piskel (6).png" id="4_4fea7"]
+[ext_resource type="Texture2D" uid="uid://bhn6vcq0cuvq4" path="res://new sprites/final sprites/warm_gloves.png" id="4_kcv21"]
+[ext_resource type="Texture2D" uid="uid://dgtlv12i7qg0" path="res://new sprites/final sprites/sturdy_gloves.png" id="5_3uefd"]
+[ext_resource type="ButtonGroup" uid="uid://dkbtg3w6y00jy" path="res://scenes/gloves.tres" id="6_4fea7"]
+[ext_resource type="Texture2D" uid="uid://bq4dlljvt2orl" path="res://new sprites/final sprites/warm_boots.png" id="6_iar4d"]
+[ext_resource type="Texture2D" uid="uid://bic11tjs1jb2b" path="res://new sprites/final sprites/spiky_boots(5).png" id="7_4fea7"]
+[ext_resource type="ButtonGroup" uid="uid://b87q68pg7hom2" path="res://scenes/boots.tres" id="9_xo2er"]
+[ext_resource type="Texture2D" uid="uid://d0ul4krsqbf38" path="res://new sprites/ui/download (4).png" id="13_xo2er"]
+
+[node name="equipment_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7tg8n")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(576, 320)
+scale = Vector2(12, 20)
+texture = ExtResource("2_xo2er")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 16.0
+offset_right = 822.0
+offset_bottom = 65.0
+text = "                   Seems you have unlocked some equipment.
+Would you like to equip them before starting your new journey?"
+
+[node name="SunIdol" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 256.0
+toggle_mode = true
+button_group = ExtResource("3_iar4d")
+
+[node name="Highlight" type="Sprite2D" parent="SunIdol"]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_4fea7")
+
+[node name="Label" type="Label" parent="SunIdol/Highlight"]
+offset_left = -27.4286
+offset_top = 18.2857
+offset_right = 266.571
+offset_bottom = 67.2857
+scale = Vector2(0.208168, 0.256987)
+text = "                     Sun Idol: 
+Campfires give more warmth"
+
+[node name="Sprite2D" type="Sprite2D" parent="SunIdol"]
+position = Vector2(64, 64)
+texture = ExtResource("2_h8kcg")
+
+[node name="MoonIdol" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 512.0
+offset_bottom = 256.0
+toggle_mode = true
+button_group = ExtResource("3_iar4d")
+
+[node name="Highlight" type="Sprite2D" parent="MoonIdol"]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_4fea7")
+
+[node name="Label" type="Label" parent="MoonIdol/Highlight"]
+offset_left = -27.4286
+offset_top = 18.2857
+offset_right = 283.571
+offset_bottom = 119.286
+scale = Vector2(0.208168, 0.256987)
+text = "                     Moon Idol: 
+First 25 steps cost no warmth. After
+that this effect has a very low chance to 
+reactivate for 3 steps."
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonIdol"]
+position = Vector2(64, 64)
+texture = ExtResource("3_7tg8n")
+
+[node name="WarmGloves" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 320.0
+offset_bottom = 512.0
+toggle_mode = true
+button_group = ExtResource("6_4fea7")
+
+[node name="Highlight" type="Sprite2D" parent="WarmGloves"]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_4fea7")
+
+[node name="Label" type="Label" parent="WarmGloves/Highlight"]
+offset_left = -29.7143
+offset_top = 18.2857
+offset_right = 264.286
+offset_bottom = 93.2857
+scale = Vector2(0.208168, 0.256987)
+text = "                   Woolen Gloves: 
+      Interacting with items cost 
+                  one less warmth"
+
+[node name="Sprite2D" type="Sprite2D" parent="WarmGloves"]
+position = Vector2(64, 64)
+texture = ExtResource("4_kcv21")
+
+[node name="SturdyGloves" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 384.0
+offset_top = 384.0
+offset_right = 512.0
+offset_bottom = 512.0
+toggle_mode = true
+button_group = ExtResource("6_4fea7")
+
+[node name="Highlight" type="Sprite2D" parent="SturdyGloves"]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_4fea7")
+
+[node name="Label" type="Label" parent="SturdyGloves/Highlight"]
+offset_left = -27.4286
+offset_top = 18.2857
+offset_right = 266.571
+offset_bottom = 67.2857
+scale = Vector2(0.208168, 0.256987)
+text = "                     Sturdy Gloves: 
+     You can carry 4 wood at once"
+
+[node name="Sprite2D" type="Sprite2D" parent="SturdyGloves"]
+position = Vector2(64, 64)
+texture = ExtResource("5_3uefd")
+
+[node name="WarmBoots" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 256.0
+toggle_mode = true
+button_group = ExtResource("9_xo2er")
+
+[node name="Highlight" type="Sprite2D" parent="WarmBoots"]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_4fea7")
+
+[node name="Label" type="Label" parent="WarmBoots/Highlight"]
+offset_left = -32.0
+offset_top = 18.2857
+offset_right = 277.0
+offset_bottom = 93.2857
+scale = Vector2(0.208168, 0.256987)
+text = "                     Woolen Boots: 
+ The first step you take after receiving 
+warmth from a campfire cost 0 warmth."
+
+[node name="Sprite2D" type="Sprite2D" parent="WarmBoots"]
+position = Vector2(64, 64)
+texture = ExtResource("6_iar4d")
+
+[node name="SpikyBoots" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 896.0
+offset_top = 128.0
+offset_right = 1024.0
+offset_bottom = 256.0
+toggle_mode = true
+keep_pressed_outside = true
+button_group = ExtResource("9_xo2er")
+
+[node name="Highlight" type="Sprite2D" parent="SpikyBoots"]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_4fea7")
+
+[node name="Label" type="Label" parent="SpikyBoots/Highlight"]
+offset_left = -25.1429
+offset_top = 18.2857
+offset_right = 268.857
+offset_bottom = 67.2857
+scale = Vector2(0.208168, 0.256987)
+text = "                     Spiky Boots: 
+You cannot trip."
+
+[node name="Sprite2D" type="Sprite2D" parent="SpikyBoots"]
+position = Vector2(64, 64)
+texture = ExtResource("7_4fea7")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 448.0
+offset_right = 926.0
+offset_bottom = 488.0
+scale = Vector2(2.6, 3.2)
+icon = ExtResource("13_xo2er")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

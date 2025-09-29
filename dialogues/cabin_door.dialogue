@@ -1,0 +1,12 @@
+~ cabin_door
+You touch the door of the cabin, your hands immediately come back to life with the warmth of the wood.
+- Enter the cabin.
+	You enter the cabin.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	do get_node("/root/Main/Player").enter_door_and_teleport(Vector2(-250, -30))
+- Step away from the door.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+

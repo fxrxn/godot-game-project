@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://cxuo66xihirgp"]
+
+[ext_resource type="Script" uid="uid://batj04xipbma0" path="res://scripts/campfire.gd" id="1_rpldw"]
+[ext_resource type="Texture2D" uid="uid://cu58bomhxn4we" path="res://new sprites/final sprites/campfire.png" id="2_7ikjx"]
+[ext_resource type="Texture2D" uid="uid://bnae6fwtk2xjq" path="res://new sprites/final sprites/smoshedwood.png" id="2_d00ut"]
+[ext_resource type="Texture2D" uid="uid://cica03vp23if5" path="res://new sprites/final sprites/2d_lights_and_shadows_neutral_point_light.webp" id="4_yjasn"]
+[ext_resource type="AudioStream" uid="uid://djb3tmyrovw8h" path="res://_soundsbaby/warm-camp-fire-high-quality-176816.mp3" id="5_i3khd"]
+[ext_resource type="AudioStream" uid="uid://qsrvmogmf5rw" path="res://_soundsbaby/finalhiss.ogg" id="6_lct8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lct8t"]
+atlas = ExtResource("2_d00ut")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d00ut"]
+atlas = ExtResource("2_7ikjx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjasn"]
+atlas = ExtResource("2_7ikjx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3khd"]
+atlas = ExtResource("2_7ikjx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_440hw"]
+atlas = ExtResource("2_7ikjx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23wtn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lct8t")
+}],
+"loop": true,
+"name": &"burnt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d00ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjasn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3khd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_440hw")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a0a7i"]
+radius = 21.1862
+
+[node name="campfire" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_rpldw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(-0.999999, -3)
+scale = Vector2(0.762451, 0.582764)
+sprite_frames = SubResource("SpriteFrames_23wtn")
+animation = &"new_animation"
+frame_progress = 0.476051
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-1, -4.62223e-33)
+scale = Vector2(0.283203, 0.242188)
+shape = SubResource("CircleShape2D_a0a7i")
+
+[node name="PointLight2D" type="PointLight2D" parent="StaticBody2D/CollisionShape2D2"]
+z_index = 4096
+color = Color(1, 0.666667, 0.4, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.690196)
+texture = ExtResource("4_yjasn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="CampfireSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_i3khd")
+volume_db = 5.0
+pitch_scale = 0.8
+max_distance = 64.0
+panning_strength = 0.0
+
+[node name="Hiss" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_lct8t")
+volume_db = 15.0
+pitch_scale = 0.54
+panning_strength = 0.0

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxr1k0ix2mtou"]
+
+[ext_resource type="Script" uid="uid://dobit3d40kbea" path="res://scripts/lootingscript.gd" id="1_qbjkr"]
+[ext_resource type="Resource" uid="uid://oy6o3pwqdwxv" path="res://dialogues/pouch.dialogue" id="2_4nfhc"]
+[ext_resource type="Texture2D" uid="uid://b81mbvu1usunh" path="res://new sprites/final sprites/big_bag.png" id="3_x81p1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vgr0"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_qbjkr")
+scene_name = "bag4_scene"
+resource = ExtResource("2_4nfhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vgr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.286666, 0.286666)
+texture = ExtResource("3_x81p1")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rpcl37sib3mh"
+path="res://.godot/imported/fast-body-fall-impact-352725 (1).mp3-03b0cdeb778c2569a8e8b8a0f405d183.mp3str"
+
+[deps]
+
+source_file="res://_soundsbaby/fast-body-fall-impact-352725 (1).mp3"
+dest_files=["res://.godot/imported/fast-body-fall-impact-352725 (1).mp3-03b0cdeb778c2569a8e8b8a0f405d183.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

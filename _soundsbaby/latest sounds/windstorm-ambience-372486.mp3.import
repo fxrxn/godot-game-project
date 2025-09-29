@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxye8eei4uoe8"
+path="res://.godot/imported/windstorm-ambience-372486.mp3-7a36ca6df6795c601f5f322896953960.mp3str"
+
+[deps]
+
+source_file="res://_soundsbaby/latest sounds/windstorm-ambience-372486.mp3"
+dest_files=["res://.godot/imported/windstorm-ambience-372486.mp3-7a36ca6df6795c601f5f322896953960.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

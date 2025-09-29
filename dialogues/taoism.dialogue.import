@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cwrv444j521fu"
+path="res://.godot/imported/taoism.dialogue-0d645f702435db4e704b9a3e6da1aea7.tres"
+
+[deps]
+
+source_file="res://dialogues/taoism.dialogue"
+dest_files=["res://.godot/imported/taoism.dialogue-0d645f702435db4e704b9a3e6da1aea7.tres"]
+
+[params]
+
+defaults=true

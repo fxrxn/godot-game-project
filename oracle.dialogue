@@ -1,0 +1,9 @@
+~ start
+Oracle: You made it so far. Let me help you out.
+Oracle: Choose an equipment to take with you on your future journeys.
+- What?
+	do loot.unfreeze()
+	do Globald.in_dialogue = false
+	do get_node("/root/Main/Player/Inv_Ui").open_upgrade()
+	do get_node("/root/Main/Oraclenpc").disappear()
+	=> END

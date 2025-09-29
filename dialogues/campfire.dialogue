@@ -1,0 +1,89 @@
+~ campfire_success
+It takes you a while but now you have a campfire right in front of you.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ firekit
+You put the firekit on the ground and throw a lit match on it. 
+It's warmth is gentle but takes no effort.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+
+~ campfire_tree
+It takes you a while but now you have a campfire right in front of you.
+The warmth steeps into your body slowly.
+Suddenly, a loud crack echoes above you.
+do dj.play_crackling_wood()
+do cabin.fade_to_black_then_back()
+With a scikening weight, a blanket of snow tumbles from the branches. It crashes down, smothering the flames in a cloud of steam and ash.
+do dj.play_thud()
+do! get_node("/root/Main/Player").destroy_latest_campfire()
+The weak hiss of the fire bites into your ears.
+- View the cold remains.
+	=> despair
+- Try to shield the fire with your hands.
+	=> futile_attempt
+- Look around
+	=> go
+
+~ despair
+The warmth evaporates quickly. Your fingers grow numb with the weight of the falling snow. The cold wraps tighter.
+
+- Try to relight the fire.
+	=> relight_fire
+
+- Take a second to think of what you can do.
+	=> hopeless
+
+- Give up on this campfire.
+	
+	=> go
+
+~ go
+This campfire won't be of any use. You need to make a new one. 
+You must do it again.
+Away from the trees this time.
+You must do it soon.
+do! get_node("/root/Main/Player/Warmth").decrease_warmth(20)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ hopeless
+There is nothing you can do. 
+The cold is sweet, it wraps you up completely.
+The campfire laughs at you.
+What a stupid thing to do.
+He was right.
+You gather whatever is left of yourself
+do! get_node("/root/Main/Player/Warmth").decrease_warmth(25)
+do! get_node("/root/Main/Player/Warmth").decrease_sanity(15)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ futile_attempt
+Your hands tremble, moving to shield the dying embers. But it is no use — the snow is heavier than hope, and the fire dies beneath your frozen grasp.
+
+- Try to relight the fire.
+	=> relight_fire
+
+
+~ relight_fire
+Your numb fingers fumble for the matches, you drop a couple of them.
+do loot.unfreeze()
+do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+do loot.freeze()
+You're sure he will love this story when you tell him.
+He will tell you "I told you so!"
+It's funny.
+do! get_node("/root/Main/Player/Warmth").decrease_warmth(30)
+do! get_node("/root/Main/Player/Warmth").decrease_sanity(15)
+do loot.unfreeze() 
+do global.current_matches -= 3
+do Globald.in_dialogue = false
+=> END
+

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3bnii5vqml4s"]
+
+[ext_resource type="Script" uid="uid://cmnm5wutg7a4k" path="res://scripts/pouch.gd" id="1_l5g64"]
+[ext_resource type="Texture2D" uid="uid://dabpulblhhh5x" path="res://new sprites/final sprites/pouch.png" id="2_hk0ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5g64"]
+size = Vector2(16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["loot"]]
+script = ExtResource("1_l5g64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l5g64")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 1.19209e-07)
+scale = Vector2(0.114583, 0.104167)
+texture = ExtResource("2_hk0ts")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 34.0
+offset_bottom = 18.0
+scale = Vector2(0.279998, 0.450535)
+tooltip_text = "something someone before you left"
+mouse_filter = 0
+metadata/_edit_use_anchors_ = true

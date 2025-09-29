@@ -1,0 +1,5 @@
+~ match_empty
+Your hands open the paper matchbox to find nothing inside. You are frozen in terror upon realizing what this means for you.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END

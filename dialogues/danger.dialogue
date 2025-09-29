@@ -1,0 +1,36 @@
+~ start
+A burning sensation starts to settle onto your fingertips.
+do dj.play_spookytension
+You breathe, and it crackles in the air like glass.
+The path continues straight ahead.
+You should warm up soon.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+
+~ again
+That old familiar body ache returns back to every part of your body. 
+It's time for caution again.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ warmed
+A fleeting sensation of warmth finally touches your fingertips. For a brief moment you can move them again.
+It doesn't seem so grim after all.
+How much further could the cabin be?
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ low_sanity
+do dj.play_spooky2()
+You find it is becoming difficult for your mind to focus.
+You can feel it scatter. Firing off thoughts in each direction.
+There is a rising grumbling noise from your stomach.
+It is empty.
+You feel hollow.
+do loot.unfreeze()
+do Globald.in_dialogue = false
+=> END

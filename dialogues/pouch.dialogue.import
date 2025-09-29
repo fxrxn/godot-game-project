@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://oy6o3pwqdwxv"
+path="res://.godot/imported/pouch.dialogue-a824d9897cba4b81f9634d2fe670051d.tres"
+
+[deps]
+
+source_file="res://dialogues/pouch.dialogue"
+dest_files=["res://.godot/imported/pouch.dialogue-a824d9897cba4b81f9634d2fe670051d.tres"]
+
+[params]
+
+defaults=true

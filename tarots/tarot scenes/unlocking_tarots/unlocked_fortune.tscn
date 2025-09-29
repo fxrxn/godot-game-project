@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca55jvxb6up7s"]
+
+[ext_resource type="Script" uid="uid://dvfgfsmrw7qqj" path="res://tarots/tarot scripts/tarotsunlockingscript.gd" id="1_rw605"]
+[ext_resource type="Texture2D" uid="uid://cdamnogalmacq" path="res://tarots/tarot arts/11.png" id="2_uhp0y"]
+[ext_resource type="Texture2D" uid="uid://bgo12ghnta5xs" path="res://tarots/tarot arts/highlight2.png" id="3_o28fw"]
+[ext_resource type="Texture2D" uid="uid://brfwg4mmnni2i" path="res://tarots/tarot arts/empty.png" id="4_xskv8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prysa"]
+size = Vector2(171.78, 270.756)
+
+[node name="fortune" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2.96, 2.44)
+script = ExtResource("1_rw605")
+card_name = "Wheel of Fortune"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+modulate = Color(0.512092, 0.27006, 0.183836, 1)
+light_mask = 3
+visibility_layer = 3
+position = Vector2(3.22187e-07, -1.95425e-06)
+scale = Vector2(0.283203, 0.242188)
+shape = SubResource("RectangleShape2D_prysa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1.18243, -4.76837e-07)
+scale = Vector2(0.950169, 0.998975)
+texture = ExtResource("2_uhp0y")
+
+[node name="Highlight" type="Sprite2D" parent="Area2D"]
+z_index = -1
+position = Vector2(-2.29729, 0.989313)
+scale = Vector2(0.805181, 0.748129)
+texture = ExtResource("3_o28fw")
+
+[node name="locked" type="Sprite2D" parent="Area2D"]
+z_index = 1
+texture = ExtResource("4_xskv8")

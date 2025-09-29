@@ -1,0 +1,48 @@
+~ metal
+There is a blade in front of you. Seems it lost it's hilt.
+It is useless. But it reminds you of something.
+Structure. Disicipline.
+Feels familiar.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+~ fire
+There is a bunch of fireflies in front of you. They seem lost. 
+They are circling each other. Moving around chaotically. But they remind you of something.
+Passion. Drive.
+Feels familiar.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ water
+There is a puddle of water in front of you. You can't really tell how deep it goes.
+Feels stagnant, dangerous. You can see your reflection in it. It reminds you of something.
+Introspection. Adaptability.
+Feels familiar.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+~ wood
+There is a stump of a tree in front of you. It seems somebody cut it down. 
+It stils stands on it's own. It is warm to the touch.
+It reminds you of your current journey.
+It has been very difficult. But you came so far.
+You feel something you haven't felt for so long.
+Hope.
+You close your eyes and enjoy the feeling for a moment.
+do loot.unfreeze() 
+do cabin.fade_to_black_then_back()
+do Globald.in_dialogue = false
+=> END
+~ wood_fail
+There is a stump of a tree in front of you. It seems somebody cut it down. 
+It still stands on it's own. It's cold to the touch.
+It reminds you of something.
+Stubbornnes. Close-mindedness.
+So many things in your life you have missed out on. Simply because you were too focused on something else.
+You shake the thoughts away. 
+The cabin awaits.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END

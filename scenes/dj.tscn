@@ -1,0 +1,76 @@
+[gd_scene load_steps=18 format=3 uid="uid://d0wwf8moi71qf"]
+
+[ext_resource type="Script" uid="uid://c0exqlms706pj" path="res://scripts/dj.gd" id="1_pwu6v"]
+[ext_resource type="AudioStream" uid="uid://cudqqrcwbktg1" path="res://_soundsbaby/latest sounds/ambience-wind-blowing-through-trees-01-186986.mp3" id="2_51ukv"]
+[ext_resource type="AudioStream" uid="uid://ccm5qq1jwvy1p" path="res://_soundsbaby/latest sounds/completetask_0.mp3" id="3_774hv"]
+[ext_resource type="AudioStream" uid="uid://dgvc8qjr3qepn" path="res://_soundsbaby/latest sounds/earthquake-loop-64704.mp3" id="4_wghkk"]
+[ext_resource type="AudioStream" uid="uid://ebabcfm3lk4g" path="res://_soundsbaby/latest sounds/falling-tree-356127.mp3" id="5_ahb6q"]
+[ext_resource type="AudioStream" uid="uid://bh7u1ryj6java" path="res://_soundsbaby/latest sounds/fast-body-fall-impact-352725.mp3" id="6_vj570"]
+[ext_resource type="AudioStream" uid="uid://dd7vyugend7sb" path="res://_soundsbaby/heavy-cloth-rustle-106346.mp3" id="7_pwu6v"]
+[ext_resource type="AudioStream" uid="uid://b8a7r3ktdqig" path="res://_soundsbaby/latest sounds/horror-sound-fx-impact-effect-2_100bpm.wav" id="8_2la63"]
+[ext_resource type="AudioStream" uid="uid://b6gp0ax7jkqg7" path="res://_soundsbaby/latest sounds/horror-sound-fx-riser-effect_150bpm_F_minor.wav" id="9_cmvnp"]
+[ext_resource type="AudioStream" uid="uid://cev5rk034aba1" path="res://_soundsbaby/latest sounds/match-lighting-sfx-320645.mp3" id="10_hvetk"]
+[ext_resource type="AudioStream" uid="uid://cbg28px31yyo5" path="res://_soundsbaby/latest sounds/Menu Selection Click.wav" id="11_6qnhn"]
+[ext_resource type="AudioStream" uid="uid://dpwhfoojp5kk1" path="res://_soundsbaby/latest sounds/misty-step-40328.mp3" id="12_hfvcq"]
+[ext_resource type="AudioStream" uid="uid://bcn6ejg60c5dn" path="res://_soundsbaby/latest sounds/sledding-on-snow-sliding-on-snow-snow-and-sledding-16590.mp3" id="13_6pmmq"]
+[ext_resource type="AudioStream" uid="uid://4kvjrae4mb0h" path="res://_soundsbaby/horror-sound-fx-distorted-reverese_125bpm_B_major.wav" id="14_snum3"]
+[ext_resource type="AudioStream" uid="uid://qsrvmogmf5rw" path="res://_soundsbaby/finalhiss.ogg" id="15_51ukv"]
+[ext_resource type="AudioStream" uid="uid://bxye8eei4uoe8" path="res://_soundsbaby/latest sounds/windstorm-ambience-372486.mp3" id="16_8gyy5"]
+[ext_resource type="AudioStream" uid="uid://cxu57utebq82v" path="res://_soundsbaby/latest sounds/Spooky Forest.mp3" id="17_f2p26"]
+
+[node name="DJ" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_pwu6v")
+
+[node name="ambiance_wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_51ukv")
+volume_db = -8.0
+
+[node name="ui_chosing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_774hv")
+
+[node name="scary_ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wghkk")
+
+[node name="crackling_wood" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ahb6q")
+
+[node name="thud2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vj570")
+
+[node name="cloth_shuffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pwu6v")
+
+[node name="spooky" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2la63")
+
+[node name="spooky2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_cmvnp")
+volume_db = -35.0
+
+[node name="light_match" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hvetk")
+volume_db = -3.0
+
+[node name="ui_mouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_6qnhn")
+
+[node name="misty_step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_hfvcq")
+
+[node name="sleddy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_6pmmq")
+
+[node name="spookytension" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_snum3")
+volume_db = -15.0
+
+[node name="thud" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_51ukv")
+
+[node name="stronger_wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_8gyy5")
+pitch_scale = 1.86
+
+[node name="spooky_forest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_f2p26")

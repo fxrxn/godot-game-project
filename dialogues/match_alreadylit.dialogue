@@ -1,0 +1,5 @@
+~ match_alreadylit
+You are already holding a match in your hand.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END

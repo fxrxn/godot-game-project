@@ -1,0 +1,53 @@
+~ wood_fail
+You kneel down to grab the branch.
+It seems so far away from you now.
+A future fire.
+All you have to do is grab it. 
+You will have a campfire in no time.
+Your hand moves slow. Slow like it's digging through the air to get to the branch.
+The tips of your fingers touch it. It's texture does not feel like anything.
+Your arm falls flat next to you.
+You collapse before the branch.
+do loot.unfreeze() 
+do get_node("/root/Main/Player").play_animation("trip", get_node("/root/Main/Player").current_direction)
+do loot.freeze()
+You feel lighter. A sense of drowsiness moves through your body as you make peace with your end.
+It stopped hurting a while ago, you suddenly notice.
+You can feel the warmth raising within you again.
+You did not need the campfire after all.
+You realize you will die right in front of this branch.
+It does not care. It is unburnt.
+The only one suffering here is you. 
+Soon, it will be nobody.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.die()
+=> END
+
+~ wood_danger
+Your arm sinks into the snow and comes back up with the branch.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ wood_danger2
+Your arm sinks into the snow and comes back up with the branch.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ wood_danger3
+Your arm sinks into the snow and comes back up with the branch.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ wood_insane
+You kneel down to grab the branch.
+Your hand touches the cold snow.
+You stare at the ground for a second.
+...
+It's hard to remember why you were kneeling down.
+do loot.unfreeze()
+do Globald.in_dialogue = false
+=> END

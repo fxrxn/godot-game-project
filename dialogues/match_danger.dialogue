@@ -1,0 +1,239 @@
+~ match_danger
+Your fingers tremble violently. You try to strike the match, but it slips through your hand like nothing was holding it. Your hands are totally numb.
+- Leave the match there and try to light another one.
+	You hit your hands together frantically. Hoping next time you are luckier.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+- Try to pick up the match.
+	=> pick_up
+	
+~ pick_up
+Through the shock and desperation you lean down to pick the match back up.
+%3
+	- A rush of adrenaline washes over your body.
+		=> succes
+%1
+	- The cold grips you tigther
+		=> fail
+
+~ succes
+Your hand dives into the snow foreciously. With pure instinct you are able to grab the match. You light it immediately.
+do! get_node("/root/Main/Player/MatchManager").light_match()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ fail
+In your attempt to pick the match back up your useless hands bury it deeper into the snow. There is nothing you can do except gather all your strength and try again.
+do! warmth.decrease_warmth(10)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ death
+You pull a match from the box, but it doesn't seem like your fingers are attached to your hand anymore.
+What you hold — if you hold anything — slides through them.
+The match falls. It lands somewhere below, in the white.
+
+- Kneel and search.
+	=> search
+- Light another.
+	=> light
+- Just breathe.
+	=> breathe
+
+~ light
+You reach for the box again. Your arms move slowly, like underwater.
+It slips from your palm, and with it, something inside you slips too.
+You crumple forward.
+do loot.unfreeze() 
+do get_node("/root/Main/Player").play_animation("trip", get_node("/root/Main/Player").current_direction)
+do loot.freeze()
+The snow welcomes you.
+This was always where you were going.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.die()
+=> END
+
+
+~ breathe
+Inhale.
+Cold air bites down into your chest.
+You collapse.
+do loot.unfreeze() 
+do get_node("/root/Main/Player").play_animation("trip", get_node("/root/Main/Player").current_direction)
+do loot.freeze()
+Something distant flickers — a song, a stove, a memory.
+You imagine warmth, and suddenly, it appers in front of you.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.die()
+=> END
+
+~ search
+You lower yourself into the snow.
+Palms sink first. Then knees. Then your whole weight.
+do loot.unfreeze() 
+do get_node("/root/Main/Player").play_animation("trip", get_node("/root/Main/Player").current_direction)
+do loot.freeze()
+Your face touches the ground.
+The cold is no longer around you — it is *in* you.
+
+- Try to get up.
+	=> die
+- Try to pick it up with your mouth.
+	=> bite
+
+~ bite
+Your jaw is stiff, but you lean forward.
+Teeth to snow. The match is close.
+You can almost touch it.
+
+%
+	- Bite.
+	=> fail2
+%
+	- Bite.
+	=> second_chance
+
+~ fail2
+Your lips touch snow.
+Ice rushes into your mouth, fills every gap.
+You cough, nearly choke.
+The match is still there, untouched.
+
+- Try to get up.
+	=> die
+- Try again.
+	=> bite2
+
+~ bite2
+You steel yourself. Every muscle is lead.
+You reach with your teeth, trembling.
+
+%
+	- Try again.
+	=> bite_fail
+%5
+	- Try again.
+	=> second_chance
+
+~ bite_fail
+You lunge. Miss.
+The match remains. Your mouth burns from the cold.
+Your breath catches. This was your last try.
+
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.die()
+=> END
+
+~ die
+You command your body to rise.
+Nothing answers.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+do death.die()
+=> END
+
+~ second_chance
+You try again. Slower.
+You scoop the snow with your jaw like a beast.
+Then — there — wood touches tooth.
+You hold it gently. Close your lips.
+It doesn’t fall.
+
+- Light it.
+	=> match_wet
+
+~ match_wet
+You push the matchbox from your pocket with your elbow.
+It lands near your chin.
+You shift, line it up, match between your lips.
+
+%
+	- Strike it with your head.
+	=> match_wet_fail
+%
+	- Strike it with your head.
+	=> match_wet_success
+
+~ match_wet_fail
+You jerk your head down.
+No spark. The matchbox is damp.
+Your neck throbs. Snow creeps higher.
+
+%
+	- Try again.
+	=> match_wet_fail2
+%
+	- Try again.
+	=> match_break
+
+~ match_wet_fail2
+You try again.
+Harder. Quicker. Still nothing.
+The wood feels soft.
+
+%
+	- One more time.
+	=> match_wet_fail3
+%2
+	- One more time.
+	=> match_wet_success
+%
+	- One more time.
+	=> match_break
+
+~ match_wet_fail3
+You bash your face against the box.
+Still dark.
+Still cold.
+
+%
+	- Again.
+	=> match_wet_success
+%
+	- Again.
+	=> match_break
+
+~ match_wet_success
+A hiss.
+A flare.
+The match catches, burning just inches from your nose.
+You keep it there, holding perfectly still.
+Your lips blister before your hands begin to twitch.
+Feeling returns — not all of it, but enough.
+
+- Light another.
+	do global.current_matches += -1
+	=> light_two
+- Try to get up.
+	=> die
+
+~ light_two
+One hand moves. Then the other.
+They work now. Sluggish, but alive.
+You shelter the flame, coax it closer to your chest.
+There is pain. 
+That’s how you know you made it.
+
+- Continue
+	do! get_node("/root/Main/Player/MatchManager").light_match()
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ match_break
+Your head jerks too hard. The match snaps.
+The warm tip vanishes in the snow.
+The cold returns — absolute, final.
+You curl around the failure like it's a blanket.
+
+- Let it end.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	do death.die()
+	=> END

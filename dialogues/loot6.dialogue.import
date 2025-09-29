@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dfasrmfkwqwjs"
+path="res://.godot/imported/loot6.dialogue-81648bdf96f6397733e891759f545de2.tres"
+
+[deps]
+
+source_file="res://dialogues/loot6.dialogue"
+dest_files=["res://.godot/imported/loot6.dialogue-81648bdf96f6397733e891759f545de2.tres"]
+
+[params]
+
+defaults=true

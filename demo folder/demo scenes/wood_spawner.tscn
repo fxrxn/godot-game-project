@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg6amesf3a1ou"]
+
+[ext_resource type="Script" uid="uid://d3o7wu58kssxf" path="res://demo folder/demo scripts/wood_spawner.gd" id="1_umj7a"]
+
+[node name="wood_spawner" type="Node2D"]
+script = ExtResource("1_umj7a")

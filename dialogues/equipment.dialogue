@@ -1,0 +1,317 @@
+~ warm_gloves
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> warm_gloves_search
+
+- Leave it alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ warm_gloves_search
+You unwrap the bag. Woolen gloves—patched and clumsy, but warm.
+Your fingertips ache just looking at them.
+
+- Put on the warm gloves.
+	=> equip_warmgloves
+
+
+~ sturdy_gloves
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> sturdy_gloves_search
+
+- Leave it buried.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ sturdy_gloves_search
+You unwrap the bag. There are tough leather gloves inside, still supple. Made for carrying wood. Surviving work.
+They smell like smoke and old sweat.
+
+- Equip the sturdy gloves.
+	=> equip_sturdygloves
+
+
+~ warm_gloves_conflict
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up. (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> warm_gloves_conflict_search
+
+- Leave it alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ warm_gloves_conflict_search
+You unwrap the bag. There are woolen gloves inside. You try to slip them on, but they won’t fit over the sturdy gloves you're wearing.
+They’re warmer. Softer. But less practical.
+You hesitate.
+
+- Toss the sturdy gloves.
+	do global.unequip_item("sturdy_gloves")
+	do! get_node("/root/Main/Player").update_equipment_visuals()
+	=> equip_warmgloves2
+
+- Leave the wool gloves behind.
+	=> leave_wool_gloves
+
+~ leave_wool_gloves
+You are happy with your current gloves. Though wool gloves might look warmer, warmth isn't everything.
+You are sure of that.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ leave_sturdy_gloves
+You feel your fingers would hate you if you said goodbye to the wool gloves.
+You leave the sturdy gloves behind. 
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END!
+
+~ leave_spiky_boots
+You are happy with your current boots. They keep you warm.
+You leave the spiky boots behind.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END!
+
+~ leave_warm_boots
+You are happy with your current gloves. They make this journey way easier.
+You leave the warm boots behind.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END!
+
+
+~ sturdy_gloves_conflict
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up. (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> sturdy_gloves_conflict_search
+
+- Leave it.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ sturdy_gloves_conflict_search
+You unwrap the bag. There are leather gloves inside. They are heavier, better for work.
+But you’re already wearing wool gloves. One or the other.
+Both won't fit.
+
+- Discard the woolen gloves.
+	do global.unequip_item("warm_gloves")
+	do! get_node("/root/Main/Player").update_equipment_visuals()
+	=> equip_sturdygloves2
+
+- Leave the sturdy gloves behind.
+	=> leave_sturdy_gloves
+
+~ warm_boots
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> warm_boots_search
+
+- Leave it alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ warm_boots_search
+You unwrap the bag. There are soft-lined boots inside. Not built for speed—but heat radiates from the lining.
+They feel like a fire that doesn’t flicker.
+
+- Equip the warm boots.
+	=> equip_warmboots
+
+
+~ spiky_boots
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> spiky_boots_search
+
+- Leave it there.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ spiky_boots_search
+You unwrap the bag. There are boots inside. Spikes protrude from the soles—meant for climbing ice or kicking back beasts.
+Your feet sink deeper into the snow.
+
+- Wear the spiky boots.
+	=> equip_spikyboots
+
+
+~ warm_boots_conflict
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up. (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> warm_boots_conflict_search
+
+- Leave it be.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ warm_boots_conflict_search
+You unwrap the bag. There are woolen gloves inside. The warmth is tempting. But you already wear spiked boots—tough, but cold.
+You stare down at both.
+
+- Throw away the spiky boots.
+	do global.unequip_item("spiky_boots")
+	do! get_node("/root/Main/Player").update_equipment_visuals()
+	=> equip_warmboots2
+
+- Leave the warm boots.
+	=> leave_warm_boots
+
+
+~ spiky_boots_conflict
+You find a bulky bag on the ground. It's stiff with ice.
+
+- Dig it up. (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> spiky_boots_conflict_search
+
+- Leave it there.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ spiky_boots_conflict_search
+You unwrap the bag. There are spiky boots inside. The spikes are still sharp. Good for fighting back.
+But your current boots are warm. You can’t wear both.
+
+- Ditch the warm boots.
+	do global.unequip_item("warm_boots")
+	do! get_node("/root/Main/Player").update_equipment_visuals()
+	=> equip_spikyboots2
+
+- Leave the spiky boots.
+	=> leave_spiky_boots
+
+~ equip_warmgloves
+You put on the woolen gloves.
+They fight back against the cold.
+do global.equip_item("warm_gloves")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_sturdygloves
+You slip on the thick leather gloves.
+They grip the world like they’ve done it before.
+do global.equip_item("sturdy_gloves")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_warmboots
+You put on the warm boots.
+Your feet relax for the first time in hours.
+do global.equip_item("warm_boots")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_spikyboots
+You tie the boot on tight.
+You feel like you could stomp through a storm.
+do global.equip_item("spiky_boots")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_warmgloves2
+You take off your sturdy gloves and put on the woolen gloves.
+You can feel them fighting back against the cold.
+do global.equip_item("warm_gloves")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_sturdygloves2
+You easily take off the wool gloves and slip on the thick leather gloves.
+They grip the world like they’ve done it before.
+do global.equip_item("sturdy_gloves")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_warmboots2
+You take off your boots one by one and put on the warm boots.
+Your feet relax for the first time in hours.
+do global.equip_item("warm_boots")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_spikyboots2
+You take off your warm boots and tie the spiky boots on tight.
+You feel like you could stomp through a storm.
+do global.equip_item("spiky_boots")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ all_equipment_found
+what the hhell
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END

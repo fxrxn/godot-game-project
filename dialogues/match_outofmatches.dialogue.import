@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://mcodvqrchth2"
+path="res://.godot/imported/match_outofmatches.dialogue-d94d90a91944ce0da3bdbad2687de1f1.tres"
+
+[deps]
+
+source_file="res://dialogues/match_outofmatches.dialogue"
+dest_files=["res://.godot/imported/match_outofmatches.dialogue-d94d90a91944ce0da3bdbad2687de1f1.tres"]
+
+[params]
+
+defaults=true

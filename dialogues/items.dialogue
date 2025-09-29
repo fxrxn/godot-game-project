@@ -1,0 +1,112 @@
+~ warm_gloves
+The woolen gloves do not fit over your sturdy gloves. 
+You ponder for a second.
+- Throw away the sturdy gloves.
+	do global.unequip_item(sturdy_gloves)
+	=> equip_warmgloves
+- Throw away the woolen gloves.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ equip_warmgloves
+You put on the woolen gloves.
+It seems to fight back against the harsh environment.
+do global.equip_item(warm_gloves)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ sturdy_gloves
+The sturdy gloves don’t fit over your woolen gloves. 
+They feel rough, durable.
+- Throw away the woolen gloves.
+	do global.unequip_item(warm_gloves)
+	=> equip_sturdygloves
+- Throw away the sturdy gloves.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ equip_sturdygloves
+You put on the sturdy gloves. They may help with picking up things.
+do global.equip_item(sturdy_gloves)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ warm_boots
+The woolen boots can’t be worn over your current pair.
+You hesitate.
+- Throw away the spiky boots.
+	do global.unequip_item(spiky_boots)
+	=> equip_warmboots
+- Throw away the woolen boots.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ equip_warmboots
+You put on the woolen boots. They feel thick and padded.
+do global.equip_item(warm_boots)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ spiky_boots
+The spiky boots can't be worn over your current pair.
+You glance at the two, and decide.
+- Throw away the woolen boots.
+	do global.unequip_item(warm_boots)
+	=> equip_spikyboots
+- Throw away the spiky boots.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ equip_spikyboots
+You put on the spiky boots. They feel like they could leave marks on stone.
+do global.equip_item(spiky_boots)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ sun_idol
+You are already carrying the Moon Idol. Once the Sun Idol gets closer to the Moon Idol they both stop shining.
+You look between the two.
+You must decide.
+- Throw away the Moon Idol.
+	do global.unequip_item(moon_idol)
+	=> equip_sunidol
+- Throw away the Sun Idol.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ equip_sunidol
+You hold the Sun Idol in your hand. It pulses faintly with heat.
+do global.equip_item(sun_idol)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ moon_idol
+You are already carrying the Sun Idol. Once the Moon Idol gets closer to the Sun Idol they both stop shining.
+You consider which to keep.
+- Throw away the Sun Idol.
+	do global.unequip_item(sun_idol)
+	=> equip_moonidol
+- Throw away the Moon Idol.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ equip_moonidol
+You hold the Moon Idol. Cold to the touch, but strangely calming.
+You feel everything around you light up slightly.
+do global.equip_item(moon_idol)
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+

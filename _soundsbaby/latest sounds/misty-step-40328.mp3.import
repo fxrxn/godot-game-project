@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpwhfoojp5kk1"
+path="res://.godot/imported/misty-step-40328.mp3-51cd56252f0fbc54e70ae80155d3e56f.mp3str"
+
+[deps]
+
+source_file="res://_soundsbaby/latest sounds/misty-step-40328.mp3"
+dest_files=["res://.godot/imported/misty-step-40328.mp3-51cd56252f0fbc54e70ae80155d3e56f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://pcltg4yg17yw"]
+
+[ext_resource type="Script" uid="uid://bcu1fa3fdus7" path="res://scripts/oracle_cabin.gd" id="1_cagfq"]
+[ext_resource type="Texture2D" uid="uid://001hvn7melyh" path="res://icon.svg" id="2_d8a5b"]
+[ext_resource type="Texture2D" uid="uid://doiq85dxjqtnl" path="res://strokevillage0001 (1).png" id="3_d8a5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydn0m"]
+size = Vector2(17, 31.25)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dpy7s"]
+points = PackedVector2Array(9, 0, 9, -24, -42, -24, -42, -24, -42, 0, -18, 0, -18, -24, -2, -24, -2, 0)
+
+[node name="oracle_cabin" type="Node2D"]
+
+[node name="fakecabin" type="CharacterBody2D" parent="." groups=["cabin_door"]]
+z_index = 2
+script = ExtResource("1_cagfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="fakecabin" groups=["cabin_door"]]
+visible = false
+position = Vector2(0, -12)
+scale = Vector2(0.125, 0.1875)
+texture = ExtResource("2_d8a5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fakecabin"]
+position = Vector2(0, -11.5)
+scale = Vector2(1, 0.8)
+shape = SubResource("RectangleShape2D_ydn0m")
+
+[node name="OracleCabin2" type="CharacterBody2D" parent="fakecabin"]
+z_index = 1
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="fakecabin/OracleCabin2"]
+position = Vector2(-8, -27)
+scale = Vector2(0.862864, 0.901699)
+texture = ExtResource("3_d8a5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fakecabin/OracleCabin2"]
+position = Vector2(10, 0)
+shape = SubResource("ConvexPolygonShape2D_dpy7s")

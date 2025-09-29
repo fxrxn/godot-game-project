@@ -1,0 +1,189 @@
+~ sun_idol
+You find a cloth pouch on the ground. Lightly buried beneath the snow.
+
+- Grab it (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> sun_search
+
+- Leave the pouch alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ sun_search
+As soon as you grab the bag from the ground you can feel a tingly warmth within it.
+You pull out an amulet of some kind.
+It has a bright yellow stone in the middle.
+Its name comes to your mind.
+It's hard to believe it, even harder to imagine leaving it here.
+
+- Take the Sun Idol.
+	=> equip_sunidol
+
+~ moon_idol
+You find a cloth pouch on the ground. Lightly buried beneath the snow.
+
+- Pick it up (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> moon_search
+
+- Leave it be.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ moon_search
+It’s a small crescent-shaped token wrapped around a string. Cold as the snow around it.
+As you touch it, your thoughts quiet down. Everything stills.
+A single word comes to your mind, clear and calm.
+You don’t know how you know.
+
+- Take the Moon Idol.
+	=> equip_moonidol
+
+~ moon_idol_conflict
+You find a cloth pouch on the ground. Lightly buried beneath the snow.
+- Grab it (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> moon_conflict_search
+	
+- Leave the pouch alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+	
+~ moon_conflict_search
+The moment you open the pouch, a flickering cold light hits your face.
+Inside is a a small crescent-shaped token wrapped around a string.
+Once the Moon Idol gets closer to the Sun Idol they both stop shining.
+You look between the two.
+You must decide.
+- Throw away the Sun Idol.
+	do global.unequip_item("sun_idol")
+	do! get_node("/root/Main/Player").update_equipment_visuals()
+	=> equip_moonidol2
+- Leave the Moon Idol alone.
+	=> leave_moon
+	
+~ leave_moon
+You drop the satchel right where you picked it up.
+You hear a faint shattering sound.
+You are not sure but the sun idol seems to get warmer for a second.
+It has kept you safe, it will continue to do so.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+
+~ sun_idol_conflict
+You find a cloth pouch on the ground. Lightly buried beneath the snow.
+
+- Grab it (You will lose some warmth)
+	do! get_node("/root/Main/Player/Warmth").decrease_warmth(global.loot_cost)
+	do! global.loot_collected += 1
+	do loot.unfreeze()
+	do get_node("/root/Main/Player").play_animation("Match", get_node("/root/Main/Player").current_direction)
+	do loot.freeze()
+	=> sun_conflict_search
+
+- Leave the pouch alone.
+	do loot.unfreeze() 
+	do Globald.in_dialogue = false
+	=> END
+
+~ sun_conflict_search
+The moment you open the pouch, a golden warmth floods your fingers.
+Inside is an amulet with a sunstone center.
+Once the Sun Idol gets closer to the Moon Idol they both stop shining.
+You look between the two.
+You must decide.
+- Throw away the Moon Idol.
+	do global.unequip_item("moon_idol")
+	do! get_node("/root/Main/Player").update_equipment_visuals()
+	=> equip_sunidol2
+- Throw away the Sun Idol.
+	=> leave_sun
+	
+~ leave_sun
+You drop the satchel right where you picked it up.
+You hear a faint shattering sound.
+You are not sure but everything around you lights up even more for a second.
+The moon idol light up your path up to this point, it will continue to do so.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_sunidol2
+You drop the moon idol to the ground. It regains it's shine.
+Having made your decision, you put the sun idol around your neck. You can feel it pulse faintly with heat.
+You feel safe.
+do global.equip_item("sun_idol")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_sunidol
+You put the sun idol around your neck. You can feel it pulse faintly with heat.
+You feel safe.
+do global.equip_item("sun_idol")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_moonidol
+You put the moon idol around your neck. You feel everything around you light up faintly.
+Everything feels calmer.
+do global.equip_item("moon_idol")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ equip_moonidol2
+You drop the sun idol to the ground. You can still feel it's warmth hungrily reaching for your feet.
+Having made your decision, you put the moon idol around your neck. You see everything around you light up faintly.
+Everything feels calmer.
+do global.equip_item("moon_idol")
+do! get_node("/root/Main/Player").update_equipment_visuals()
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END
+
+~ found_both
+You find a paper with something scrawled inside. 
+It's a list of random things. 
+"the dark, the cold, losing you"
+It stuns you for a second.
+It is a heart ache from ages ago.
+A relationship that didn't work.
+It's why you are going to this cabin.
+To make it right.
+You know who's waiting for you there.
+You know tomorrow will be too late.
+You have already broken your promise.
+A terrible sadness starts aching in your heart.
+You there.
+How did you get here.
+This script only plays when someone finds 3 pouches in a row.
+The way the game's set up, You can't possibly find 3 pouches.
+Get our developer team, this is supposed to be the best simulated prison.
+We need to check for every single thing.
+It's still recording? What do you mean it's recording?
+Sir stop pressing the button.
+do loot.unfreeze() 
+do Globald.in_dialogue = false
+=> END

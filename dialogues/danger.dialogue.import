@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dxyh0vfm1inwp"
+path="res://.godot/imported/danger.dialogue-200cdffe6a79d38dbfacd76d4c6d2e88.tres"
+
+[deps]
+
+source_file="res://dialogues/danger.dialogue"
+dest_files=["res://.godot/imported/danger.dialogue-200cdffe6a79d38dbfacd76d4c6d2e88.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://tix4favmvr4t"]
+
+[ext_resource type="Texture2D" uid="uid://c2me380hu03rw" path="res://tarots/tarot arts/empty_death.png" id="1_3ytpi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 9.5)
+scale = Vector2(2.08333, 1.60938)
+texture = ExtResource("1_3ytpi")

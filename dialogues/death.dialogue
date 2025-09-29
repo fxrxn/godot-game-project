@@ -1,0 +1,110 @@
+~ zero
+...
+- Skip this dialogue
+	do loot.unfreeze()
+	do death.backtomenu()
+	=> END
+- Continue
+	=> Continue
+
+~ Continue
+You open your eyes in a cabin. You are sitting in a couch with someone whose face is enough to calm you down.
+You are under blankets. There is a fire safe and sound in the fireplace.
+It's warm. 
+You are holding a pen in your hand, seems you just finished writing a list.
+The other person speaks up.
+???: Are you finished now?
+{{global.player_name}}: Yeah, will we say what we wrote now?
+???: Yeah we will. You first.
+{{global.player_name}}: Okay. I wrote heights, dying alone, and dying with regrets.
+???: Aww, {{global.player_name}}...
+{{global.player_name}}: So what did you write?
+???: I wrote the dark, the cold-
+{{global.player_name}}: The cold? Like the flu?
+???: No like freezing.
+{{global.player_name}}: That's a weird fear.
+???: What do you mean?? It can be very dangerous out in the cold.
+{{global.player_name}}: I don't know... If I felt cold I would just wear more clothes.
+???: Stupid! What if you were out hiking or something?
+{{global.player_name}}: Well I would just keep moving to keep warm or make a campfire or something.
+???: Do you even know how to do that?
+{{global.player_name}}: No... but how hard can it be?
+???: God you are triggering my third fear right now!
+{{global.player_name}}: Haha what is it? Being stuck with an idiot?
+???: Close... it's losing you...
+{{global.player_name}}: Baby...
+???: Promise me you would never do stupid stuff like that.
+{{global.player_name}}: I promise.
+???: Promise that I will never lose you.
+- I promise
+	do loot.unfreeze()
+	do death.backtomenu()
+	=> END
+
+~ rez
+...
+You open your eyes back in the couch again. It's very different. It's freezing cold. 
+You can't move your body. 
+The other person grabs your hands. Their hands are freezing cold.
+{{global.player_name}}: It's... cold...
+They run to relight the fire in the fireplace. Then run back to you.
+???: {{global.player_name}}! It's okay. It's going to be okay.
+Your heart starts beating like a drum.
+The feeling of your body starts to come back to you.
+
+- I promised...
+	do death.resurrect()
+	=> END
+- There is no hope.
+	do loot.unfreeze()
+	do death.backtomenu()
+	=> END
+
+
+~ first
+...
+Something else flickers in your mind.
+Paper work, spending countless hours...
+It just wasn't meant to be.
+
+- That's the end.
+	do loot.unfreeze()
+	do death.backtomenu()
+	=> END
+
+~ second
+
+
+You try to hold onto something.
+Something... Anything...
+It's dark and empty.
+
+- But...
+	do loot.unfreeze()
+	do death.backtomenu()
+	=> END
+
+~ third
+
+
+You feel death's presence.
+It's heavy.
+There is no getting back up.
+
+- ...
+
+~ fourth
+
+Death: [[Give up.|It's over.|No use.|Useless.|Meaningless.| Waste of time.|Alone.|All alone.|On your own|Noone.|Nothing.|]]
+
+- Try again.
+	do loot.unfreeze()
+	do death.backtomenu()
+=> END
+
+~ skelly
+Whatever just happened, it seems you survived it.
+You smile with a sense of relief.
+do loot.unfreeze()
+do Globald.in_dialogue = false
+=> END

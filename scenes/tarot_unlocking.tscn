@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2yxkcsbxhemt"]
+
+[ext_resource type="Script" uid="uid://dryqrn5i488p6" path="res://scripts/tarot_unlock.gd" id="1_8kku5"]
+[ext_resource type="Script" uid="uid://b0dk7hj1l3gpe" path="res://button scripts/oracle_button.gd" id="2_5d2su"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 643.0
+script = ExtResource("1_8kku5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.192374
+anchor_top = -0.119751
+anchor_right = 0.22357
+anchor_bottom = -0.119751
+offset_left = 294.0
+offset_top = 109.0
+offset_right = 829.0
+offset_bottom = 267.0
+theme_override_font_sizes/font_size = 50
+text = "You have Unlocked "
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 448.0
+offset_right = 1012.0
+offset_bottom = 592.0
+scale = Vector2(1.08, 0.88)
+theme_override_font_sizes/font_size = 32
+text = "Continue..."
+script = ExtResource("2_5d2su")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
